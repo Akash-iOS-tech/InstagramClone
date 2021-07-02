@@ -27,6 +27,9 @@
 		B43EFE55268CD3710077EC41 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE54268CD3710077EC41 /* ListViewController.swift */; };
 		B43EFE57268CD3CA0077EC41 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */; };
 		B43EFE59268CD3DA0077EC41 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */; };
+		B4A7731D268F670200A347E0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7731C268F670200A347E0 /* DatabaseManager.swift */; };
+		B4A7731F268F6D3700A347E0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7731E268F6D3700A347E0 /* AuthManager.swift */; };
+		B4A77321268F6D8900A347E0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A77320268F6D8900A347E0 /* StorageManager.swift */; };
 		C7F342BCE9F9E157DADA1BBA /* Pods_InstagramCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0358F7FF1F54B07891C4EC6F /* Pods_InstagramCloneApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		B43EFE54268CD3710077EC41 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		B4A7731C268F670200A347E0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		B4A7731E268F6D3700A347E0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		B4A77320268F6D8900A347E0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,9 @@
 				B43EFE22268CCF060077EC41 /* AppDelegate.swift */,
 				B43EFE24268CCF060077EC41 /* SceneDelegate.swift */,
 				B409B0A9268E320A0082C593 /* GoogleService-Info.plist */,
+				B4A7731C268F670200A347E0 /* DatabaseManager.swift */,
+				B4A7731E268F6D3700A347E0 /* AuthManager.swift */,
+				B4A77320268F6D8900A347E0 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -161,14 +170,8 @@
 			children = (
 				B43EFE47268CD2330077EC41 /* Onboarding */,
 				B43EFE48268CD24D0077EC41 /* LoginViewController.swift */,
-				B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */,
-				B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */,
-				B43EFE54268CD3710077EC41 /* ListViewController.swift */,
-				B43EFE52268CD3590077EC41 /* SearchViewController.swift */,
 				B43EFE4A268CD25B0077EC41 /* RegistrationViewController.swift */,
-				B43EFE4C268CD29B0077EC41 /* PostViewController.swift */,
-				B43EFE4E268CD2C90077EC41 /* EditProfileViewController.swift */,
-				B43EFE50268CD2DA0077EC41 /* SettingsViewController.swift */,
+				B4A7731B268E46E100A347E0 /* General */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -178,6 +181,20 @@
 			children = (
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B4A7731B268E46E100A347E0 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B43EFE54268CD3710077EC41 /* ListViewController.swift */,
+				B43EFE52268CD3590077EC41 /* SearchViewController.swift */,
+				B43EFE4C268CD29B0077EC41 /* PostViewController.swift */,
+				B43EFE4E268CD2C90077EC41 /* EditProfileViewController.swift */,
+				B43EFE50268CD2DA0077EC41 /* SettingsViewController.swift */,
+				B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */,
+				B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		D9F65E3B37AF70E2FB900340 /* Pods */ = {
@@ -313,12 +330,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B43EFE4F268CD2C90077EC41 /* EditProfileViewController.swift in Sources */,
+				B4A7731F268F6D3700A347E0 /* AuthManager.swift in Sources */,
 				B43EFE3C268CD0C60077EC41 /* ExploreViewController.swift in Sources */,
 				B43EFE3E268CD0E60077EC41 /* CameraViewController.swift in Sources */,
 				B43EFE27268CCF060077EC41 /* HomeViewController.swift in Sources */,
+				B4A7731D268F670200A347E0 /* DatabaseManager.swift in Sources */,
 				B43EFE4B268CD25B0077EC41 /* RegistrationViewController.swift in Sources */,
 				B43EFE59268CD3DA0077EC41 /* PostEditorViewController.swift in Sources */,
 				B43EFE4D268CD29B0077EC41 /* PostViewController.swift in Sources */,
+				B4A77321268F6D8900A347E0 /* StorageManager.swift in Sources */,
 				B43EFE55268CD3710077EC41 /* ListViewController.swift in Sources */,
 				B43EFE40268CD0F80077EC41 /* NotificationsViewController.swift in Sources */,
 				B43EFE49268CD24D0077EC41 /* LoginViewController.swift in Sources */,
@@ -473,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 204F4021ED3965E30FE23BDF /* Pods-InstagramCloneApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = myapp.InstagramCloneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -493,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E4721038955A4D36D82A035 /* Pods-InstagramCloneApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -501,7 +523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				"OTHER_LDFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-l\"c++\"",
