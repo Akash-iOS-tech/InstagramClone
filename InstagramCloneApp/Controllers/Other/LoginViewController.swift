@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
         return UIButton()
     }()
     
+    private let createAccount: UIButton = {
+        return UIButton()
+    }()
+    
     private let headerView: UIView = {
         return UIView()
     }()
@@ -35,6 +39,7 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         view.addSubview(termsButton)
         view.addSubview(privacyButton)
+        view.addSubview(createAccount)
         view.addSubview(headerView)
     }
     
@@ -48,5 +53,21 @@ class LoginViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         // assign frames
+    }
+    
+    @objc private func didTapLoginButton() {
+        
+    }
+    
+    @objc private func didTapTermsButton() {
+        
+    }
+    
+    @objc private func didTapPrivacyButton() {
+        
+    }
+    
+    @objc private func didTapCreateAccountButton() {
+         
     }
 }
