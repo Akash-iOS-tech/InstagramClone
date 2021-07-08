@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 class LoginViewController: UIViewController {
     
@@ -14,6 +15,8 @@ class LoginViewController: UIViewController {
         field.autocorrectionType = .no
         field.layer.masksToBounds = true
         field.layer.cornerRadius = cornerRadius
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         field.backgroundColor = .secondarySystemBackground
         return field
     }()
@@ -22,13 +25,15 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.isSecureTextEntry = true
         field.placeholder = "Password"
-        field.returnKeyType = .next
+        field.returnKeyType = .continue
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
         field.layer.masksToBounds = true
         field.layer.cornerRadius = cornerRadius
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         field.backgroundColor = .secondarySystemBackground
         return field
     }()
@@ -44,11 +49,17 @@ class LoginViewController: UIViewController {
     }()
     
     private let termsButton: UIButton = {
-        return UIButton()
+        let button = UIButton()
+        button.setTitle("Terms of Service", for: .normal)
+        button.setTitleColor(.secondaryLabel, for: .normal)
+        return button
     }()
     
     private let privacyButton: UIButton = {
-        return UIButton()
+        let button = UIButton()
+        button.setTitle("Privacy Policy", for: .normal)
+        button.setTitleColor(.secondaryLabel, for: .normal)
+        return button
     }()
     
     private let createAccount: UIButton = {
@@ -79,6 +90,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
+        usernameEmailField.delegate = self
+        passwordField.delegate = self
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        createAccount.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
+        termsButton.addTarget(self, action: #selector(didTapTermsButton), for: .touchUpInside)
+        privacyButton.addTarget(self, action: #selector(didTapPrivacyButton), for: .touchUpInside)
+        
         view.backgroundColor = .systemBackground
     }
     
@@ -91,15 +109,18 @@ class LoginViewController: UIViewController {
         passwordField.frame = CGRect(x: 25, y: usernameEmailField.bottom + 10, width: view.width - 50, height: 52)
         loginButton.frame = CGRect(x: 25, y: passwordField.bottom + 10, width: view.width - 50, height: 52)
         createAccount.frame = CGRect(x: 25, y: loginButton.bottom + 10, width: view.width - 50, height: 52)
+        termsButton.frame = CGRect(x: 10, y: view.height - view.safeAreaInsets.bottom - 100, width: view.width - 20, height: 50)
+        privacyButton.frame = CGRect(x: 10, y: view.height - view.safeAreaInsets.bottom - 50 , width: view.width - 20, height: 50)
+        
         
         configureHeaderView()
     }
     
     private func configureHeaderView() {
         guard headerView.subviews.count == 1 else { return }
-    
-    
-    guard let backgroundView = headerView.subviews.first else { return }
+        
+        
+        guard let backgroundView = headerView.subviews.first else { return }
         backgroundView.frame = headerView.bounds
         
         // Add Insta Logo
@@ -108,21 +129,54 @@ class LoginViewController: UIViewController {
         headerView.addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: headerView.width/4.0, y: view.safeAreaInsets.top, width: headerView.width/2.0, height: headerView.height - view.safeAreaInsets.top)
-}
+    }
     
     @objc private func didTapLoginButton() {
+        // dismiss keyboard
+        usernameEmailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        let characterCheck = isValidPassword()
         
+        // Check if there is text in both username and password fields
+        
+        guard let username = usernameEmailField.text, !username.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8 && characterCheck == true  else { return }
+        // Add Login Functionality
+    }
+    
+    public func isValidPassword() -> Bool {
+        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
     }
     
     @objc private func didTapTermsButton() {
+        guard let url = URL(string: "https://www.instagram.com/about/legal/terms/before-january-19-2013/") else { return }
         
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
     
     @objc private func didTapPrivacyButton() {
+        guard let url = URL(string: "https://help.instagram.com/519522125107875") else { return }
         
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
     
     @objc private func didTapCreateAccountButton() {
-        
+        let vc = RegistrationViewController()
+        present(vc, animated: true, completion: nil)
     }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameEmailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            didTapLoginButton()
+        }
+        return true
+    }
+    
 }
