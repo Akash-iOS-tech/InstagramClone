@@ -5,7 +5,7 @@ import SafariServices
 class LoginViewController: UIViewController {
     
     struct Constants {
-    static let cornerRadius: CGFloat = 8.0
+        static let cornerRadius: CGFloat = 8.0
     }
     
     private let usernameEmailField: UITextField = {
@@ -138,7 +138,7 @@ class LoginViewController: UIViewController {
         // dismiss keyboard
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
-        print("Pressed Log In")
+        //       print("Pressed Log In")
         //    let characterCheck = isValidPassword()
         
         // Check if there is text in both username and password fields
@@ -149,20 +149,21 @@ class LoginViewController: UIViewController {
         var userName: String?
         var email: String?
         
-        if usernameEmail.contains("@"), usernameEmail.contains(".") {
-            // email
-            email = userName
+        if usernameEmail.contains("@") && usernameEmail.contains(".") {
+            email = usernameEmail
         } else {
-            // username
             userName = usernameEmail
         }
+        
         AuthManager.shared.loginUser(username: userName, email: email, password: password) { success in
-            if success {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                let alert = UIAlertController(title: "Failed to Log In", message: "We were unable to log you in", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "Failed to Log In", message: "We were unable to log you in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
             }
         }
     }

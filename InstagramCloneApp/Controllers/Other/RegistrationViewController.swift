@@ -102,7 +102,16 @@ class RegistrationViewController: UIViewController {
         guard let email = emailField.text, !email.isEmpty,
               let username = userNameField.text, !username.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8 else { return }
-              
+        
+        AuthManager.shared.registerUser(username: username, email: email, password: password) { registered in
+            DispatchQueue.main.async {
+            if registered {
+                
+            } else {
+                
+            }
+        }
+    }
     }
 }
 
