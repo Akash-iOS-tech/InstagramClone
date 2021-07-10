@@ -1,9 +1,12 @@
 import UIKit
+import FirebaseAuth
 import SafariServices
 
 class LoginViewController: UIViewController {
     
+    struct Constants {
     static let cornerRadius: CGFloat = 8.0
+    }
     
     private let usernameEmailField: UITextField = {
         let field = UITextField()
@@ -14,7 +17,7 @@ class LoginViewController: UIViewController {
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
         field.layer.masksToBounds = true
-        field.layer.cornerRadius = cornerRadius
+        field.layer.cornerRadius = Constants.cornerRadius
         field.layer.borderWidth = 1.0
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
         field.backgroundColor = .secondarySystemBackground
@@ -31,7 +34,7 @@ class LoginViewController: UIViewController {
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
         field.layer.masksToBounds = true
-        field.layer.cornerRadius = cornerRadius
+        field.layer.cornerRadius = Constants.cornerRadius
         field.layer.borderWidth = 1.0
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
         field.backgroundColor = .secondarySystemBackground
@@ -43,7 +46,7 @@ class LoginViewController: UIViewController {
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.masksToBounds = true
-        button.layer.cornerRadius = cornerRadius
+        button.layer.cornerRadius = Constants.cornerRadius
         button.backgroundColor = .systemBlue
         return button
     }()
@@ -133,20 +136,41 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapLoginButton() {
         // dismiss keyboard
-        usernameEmailField.resignFirstResponder()
         passwordField.resignFirstResponder()
-        let characterCheck = isValidPassword()
+        usernameEmailField.resignFirstResponder()
+        print("Pressed Log In")
+        //    let characterCheck = isValidPassword()
         
         // Check if there is text in both username and password fields
         
-        guard let username = usernameEmailField.text, !username.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8 && characterCheck == true  else { return }
+        guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8  else { return }
         // Add Login Functionality
+        
+        var userName: String?
+        var email: String?
+        
+        if usernameEmail.contains("@"), usernameEmail.contains(".") {
+            // email
+            email = userName
+        } else {
+            // username
+            userName = usernameEmail
+        }
+        AuthManager.shared.loginUser(username: userName, email: email, password: password) { success in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Failed to Log In", message: "We were unable to log you in", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
     
-    public func isValidPassword() -> Bool {
-        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
-    }
+    //    public func isValidPassword() -> Bool {
+    //        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+    //        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
+    //    }
     
     @objc private func didTapTermsButton() {
         guard let url = URL(string: "https://www.instagram.com/about/legal/terms/before-january-19-2013/") else { return }
@@ -164,7 +188,8 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton() {
         let vc = RegistrationViewController()
-        present(vc, animated: true, completion: nil)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
 }
 
@@ -178,5 +203,4 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    
 }
