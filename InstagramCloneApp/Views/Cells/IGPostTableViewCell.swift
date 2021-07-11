@@ -1,6 +1,6 @@
 import UIKit
 
-class IGPostTableViewCell: UITableViewCell {
+final class IGPostTableViewCell: UITableViewCell {
     
     static let identifier = "IGPostTableViewCell"
 

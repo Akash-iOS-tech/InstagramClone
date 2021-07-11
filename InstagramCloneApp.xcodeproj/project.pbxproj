@@ -109,20 +109,13 @@
 		B43EFE21268CCF060077EC41 /* InstagramCloneApp */ = {
 			isa = PBXGroup;
 			children = (
-				B43EFE36268CCF930077EC41 /* Models */,
+				B4936B88269A8D2A003B34BA /* Models */,
 				B43EFE37268CCF9C0077EC41 /* Views */,
 				B43EFE38268CCFAC0077EC41 /* Controllers */,
 				B43EFE39268CCFB80077EC41 /* Resources */,
 				B43EFE30268CCF060077EC41 /* Info.plist */,
 			);
 			path = InstagramCloneApp;
-			sourceTree = "<group>";
-		};
-		B43EFE36268CCF930077EC41 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		B43EFE37268CCF9C0077EC41 /* Views */ = {
@@ -183,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				B43EFE47268CD2330077EC41 /* Onboarding */,
-				B43EFE48268CD24D0077EC41 /* LoginViewController.swift */,
-				B43EFE4A268CD25B0077EC41 /* RegistrationViewController.swift */,
 				B4A7731B268E46E100A347E0 /* General */,
 			);
 			path = Other;
@@ -193,8 +184,17 @@
 		B43EFE47268CD2330077EC41 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				B43EFE48268CD24D0077EC41 /* LoginViewController.swift */,
+				B43EFE4A268CD25B0077EC41 /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B4936B88269A8D2A003B34BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B4991082269A841500165723 /* Cells */ = {
