@@ -29,6 +29,7 @@
 		B43EFE55268CD3710077EC41 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE54268CD3710077EC41 /* ListViewController.swift */; };
 		B43EFE57268CD3CA0077EC41 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */; };
 		B43EFE59268CD3DA0077EC41 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */; };
+		B4991084269A844600165723 /* IGPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4991083269A844600165723 /* IGPostTableViewCell.swift */; };
 		B4A7731D268F670200A347E0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7731C268F670200A347E0 /* DatabaseManager.swift */; };
 		B4A7731F268F6D3700A347E0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7731E268F6D3700A347E0 /* AuthManager.swift */; };
 		B4A77321268F6D8900A347E0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A77320268F6D8900A347E0 /* StorageManager.swift */; };
@@ -60,6 +61,7 @@
 		B43EFE54268CD3710077EC41 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B43EFE56268CD3CA0077EC41 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		B43EFE58268CD3DA0077EC41 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		B4991083269A844600165723 /* IGPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPostTableViewCell.swift; sourceTree = "<group>"; };
 		B4A7731C268F670200A347E0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		B4A7731E268F6D3700A347E0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B4A77320268F6D8900A347E0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		B43EFE37268CCF9C0077EC41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B4991082269A841500165723 /* Cells */,
 				B43EFE2B268CCF060077EC41 /* Assets.xcassets */,
 				B43EFE3A268CCFFF0077EC41 /* Storyboards */,
 			);
@@ -192,6 +195,14 @@
 			children = (
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B4991082269A841500165723 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B4991083269A844600165723 /* IGPostTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B4A7731B268E46E100A347E0 /* General */ = {
@@ -334,6 +345,7 @@
 			files = (
 				B43EFE4F268CD2C90077EC41 /* EditProfileViewController.swift in Sources */,
 				B4A7731F268F6D3700A347E0 /* AuthManager.swift in Sources */,
+				B4991084269A844600165723 /* IGPostTableViewCell.swift in Sources */,
 				B43EFE3C268CD0C60077EC41 /* ExploreViewController.swift in Sources */,
 				B43EFE3E268CD0E60077EC41 /* CameraViewController.swift in Sources */,
 				B43EFE27268CCF060077EC41 /* HomeViewController.swift in Sources */,
