@@ -17,7 +17,6 @@ class ProfileViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
-        view.backgroundColor = .systemBackground
     }
     
     override func viewDidLayoutSubviews() {
