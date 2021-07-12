@@ -2,7 +2,7 @@
 import UIKit
 
 protocol FormTableViewCellDelegate: AnyObject {
-    func formtableViewCell(cell: FormTableViewCell, didUpdateField value: String?)
+    func formtableViewCell(cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel?)
 }
 
 class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
@@ -60,9 +60,10 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-   //     model?.value = textField.text
-        delegate?.formtableViewCell(cell: self, didUpdateField: textField.text)
-  //      guard let model = model else {return true}
+        model?.value = textField.text
+  //
+        guard let model = model else {return true}
+        delegate?.formtableViewCell(cell: self, didUpdateField: model)
         textField.resignFirstResponder()
         return true
     }

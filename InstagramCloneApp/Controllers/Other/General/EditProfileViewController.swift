@@ -6,10 +6,10 @@ struct EditProfileFormModel {
     var value: String?
 }
 
-final class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FormTableViewCellDelegate {
     //Update the Model
-    func formtableViewCell(cell: FormTableViewCell, didUpdateField value: String?) {
-        print("Value \(value ?? "")")
+    func formtableViewCell(cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel?) {
+
     }
     
     
@@ -24,7 +24,7 @@ final class EditProfileViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
-   //     cell.delegate = self
+        cell.delegate = self
         cell.configure(with: model)
         return cell
     }
@@ -100,6 +100,7 @@ final class EditProfileViewController: UIViewController, UITableViewDelegate, UI
     
     @objc private func didTapSave() {
         // Save into database
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func didTapCancel() {
