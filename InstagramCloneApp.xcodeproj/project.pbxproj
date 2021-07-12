@@ -10,6 +10,7 @@
 		05F5E5EF5E9DA0732047869B /* Pods_InstagramCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0A3B45A58ADB213D7D1655 /* Pods_InstagramCloneApp.framework */; };
 		B409B0AA268E320A0082C593 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B409B0A9268E320A0082C593 /* GoogleService-Info.plist */; };
 		B418C84426975F53000C8600 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418C84326975F53000C8600 /* Extension.swift */; };
+		B42357F6269CA73F00F39A3C /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42357F5269CA73F00F39A3C /* FormTableViewCell.swift */; };
 		B43EFE23268CCF060077EC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE22268CCF060077EC41 /* AppDelegate.swift */; };
 		B43EFE25268CCF060077EC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE24268CCF060077EC41 /* SceneDelegate.swift */; };
 		B43EFE27268CCF060077EC41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFE26268CCF060077EC41 /* HomeViewController.swift */; };
@@ -43,6 +44,7 @@
 		B122A8874E85644FE9E6A25B /* Pods-InstagramCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneApp.debug.xcconfig"; path = "Target Support Files/Pods-InstagramCloneApp/Pods-InstagramCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B409B0A9268E320A0082C593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B418C84326975F53000C8600 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B42357F5269CA73F00F39A3C /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		B43EFE1F268CCF060077EC41 /* InstagramCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43EFE22268CCF060077EC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B43EFE24268CCF060077EC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				B4936B8D269B5FD4003B34BA /* Home Feed */,
+				B42357F5269CA73F00F39A3C /* FormTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				B43EFE42268CD1050077EC41 /* ProfileViewController.swift in Sources */,
 				B43EFE23268CCF060077EC41 /* AppDelegate.swift in Sources */,
 				B43EFE25268CCF060077EC41 /* SceneDelegate.swift in Sources */,
+				B42357F6269CA73F00F39A3C /* FormTableViewCell.swift in Sources */,
 				B43EFE51268CD2DA0077EC41 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

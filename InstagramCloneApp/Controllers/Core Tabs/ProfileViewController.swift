@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         guard let collectionView = collectionView else { return }
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
