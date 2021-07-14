@@ -7,7 +7,7 @@ public class StorageManager {
     
     private let bucket = Storage.storage().reference()
     
-    public func uploadUserPost(model: Post, completion: @escaping (Result<URL, Error>) -> Void) {
+    public func uploadUserPost(model: UserPost, completion: @escaping (Result<URL, Error>) -> Void) {
         
     }
     
@@ -26,12 +26,4 @@ public class StorageManager {
     enum IGSTorageManagerError: Error {
         case failedToDownload
     }
-}
-
-public struct Post {
-    let postType: UserPostType
-}
-
-enum UserPostType {
-    case photo, video
 }
