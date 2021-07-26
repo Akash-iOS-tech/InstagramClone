@@ -111,10 +111,10 @@ final class SettingsViewController: UIViewController {
                         // Present Login
                         let loginVC = LoginViewController()
                         loginVC.modalPresentationStyle = .fullScreen
-                        self.present(loginVC, animated: true) {
+                        self.tabBarController?.selectedIndex = 0
+                        self.present(loginVC, animated: true)
                             self.navigationController?.popToRootViewController(animated: false)
-                            self.tabBarController?.selectedIndex = 0
-                        }
+                            
                     } else {
                         // error occured
                         fatalError("Could not Logout user")

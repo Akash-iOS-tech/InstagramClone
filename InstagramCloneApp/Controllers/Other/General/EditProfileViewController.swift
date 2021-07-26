@@ -8,7 +8,8 @@ struct EditProfileFormModel {
 
 final class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FormTableViewCellDelegate {
     //Update the Model
-    func formtableViewCell(cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel?) {
+    func formtableViewCell(cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel?)
+    {
 
     }
     

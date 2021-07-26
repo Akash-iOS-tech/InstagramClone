@@ -135,13 +135,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func didTapLoginButton() {
-        // dismiss keyboard
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
-        //       print("Pressed Log In")
-        //    let characterCheck = isValidPassword()
-        
-        // Check if there is text in both username and password fields
         
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8  else { return }
         // Add Login Functionality
@@ -167,11 +162,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    //    public func isValidPassword() -> Bool {
-    //        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-    //        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
-    //    }
     
     @objc private func didTapTermsButton() {
         guard let url = URL(string: "https://www.instagram.com/about/legal/terms/before-january-19-2013/") else { return }
@@ -204,4 +194,5 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
+    
 }

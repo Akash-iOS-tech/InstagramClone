@@ -105,13 +105,13 @@ class RegistrationViewController: UIViewController {
         
         AuthManager.shared.registerUser(username: username, email: email, password: password) { registered in
             DispatchQueue.main.async {
-            if registered {
-                
-            } else {
-                
+                if registered {
+                    
+                } else {
+                    
+                }
             }
         }
-    }
     }
 }
 
