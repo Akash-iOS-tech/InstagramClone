@@ -1,6 +1,4 @@
-
 import Foundation
-
 
 ///Represent a user post
 public struct UserPost {
