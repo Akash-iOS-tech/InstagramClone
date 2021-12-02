@@ -122,7 +122,6 @@ class LoginViewController: UIViewController {
     private func configureHeaderView() {
         guard headerView.subviews.count == 1 else { return }
     
-        
         guard let backgroundView = headerView.subviews.first else { return }
         backgroundView.frame = headerView.bounds
         
@@ -138,8 +137,6 @@ class LoginViewController: UIViewController {
         // dismiss keyboard
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
-        //       print("Pressed Log In")
-        //    let characterCheck = isValidPassword()
         
         // Check if there is text in both username and password fields
         
