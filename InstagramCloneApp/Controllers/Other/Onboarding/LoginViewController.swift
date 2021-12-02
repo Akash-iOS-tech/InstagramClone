@@ -121,7 +121,7 @@ class LoginViewController: UIViewController {
     
     private func configureHeaderView() {
         guard headerView.subviews.count == 1 else { return }
-        
+    
         
         guard let backgroundView = headerView.subviews.first else { return }
         backgroundView.frame = headerView.bounds
@@ -167,11 +167,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    //    public func isValidPassword() -> Bool {
-    //        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-    //        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
-    //    }
     
     @objc private func didTapTermsButton() {
         guard let url = URL(string: "https://www.instagram.com/about/legal/terms/before-january-19-2013/") else { return }

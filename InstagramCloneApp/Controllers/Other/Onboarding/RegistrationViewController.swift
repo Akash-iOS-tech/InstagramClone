@@ -106,9 +106,10 @@ class RegistrationViewController: UIViewController {
         AuthManager.shared.registerUser(username: username, email: email, password: password) { registered in
             DispatchQueue.main.async {
             if registered {
-                
+                let vc = RegistrationViewController()
+                vc.present(vc, animated: true, completion: nil)
             } else {
-                
+                print("Enter all details correctly")
             }
         }
     }
