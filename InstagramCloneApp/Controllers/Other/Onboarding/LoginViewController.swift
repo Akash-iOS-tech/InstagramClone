@@ -125,7 +125,7 @@ class LoginViewController: UIViewController {
         guard let backgroundView = headerView.subviews.first else { return }
         backgroundView.frame = headerView.bounds
         
-        // Add Insta Logo
+        // Add Insta Logo for the app on the Login Screen
         
         let imageView = UIImageView(image: UIImage(named: "logo"))
         headerView.addSubview(imageView)
@@ -141,7 +141,6 @@ class LoginViewController: UIViewController {
         // Check if there is text in both username and password fields
         
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8  else { return }
-        // Add Login Functionality
         
         var userName: String?
         var email: String?
