@@ -91,7 +91,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if section == 0 {
             return CGSize(width: collectionView.width, height: collectionView.height/3)
         } else {
-            
             //Size of section tabs
             return CGSize(width: collectionView.width, height: 65)
         }
