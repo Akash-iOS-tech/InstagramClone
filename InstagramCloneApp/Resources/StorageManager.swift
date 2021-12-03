@@ -21,8 +21,6 @@ public class StorageManager {
         }
     }
     
-    
-    
     enum IGSTorageManagerError: Error {
         case failedToDownload
     }
